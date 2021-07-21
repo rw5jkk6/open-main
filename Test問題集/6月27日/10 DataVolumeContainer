@@ -1,0 +1,74 @@
+問題
+MySqlを使ってDataVolumeコンテナを作る
+busyboxを利用する
+MySqlのコンテナを作る
+以下の？のコマンドを打つ。それ以外はコピペする
+
+--Dockerfile--
+
+FROM busybox
+VOLUME /var/lib/mysql
+CMD  ["bin/true"]
+
+----------------------
+?
+
+?
+
+docker container run -d --rm --name mysql -e "MYSQL_ALLOW_EMPTY_PASSWORD=yes" -e "MYSQL_DATABASE=volume_test" -e "MYSQL_USER=example" -e "MYSQL_PASSWORD=example" --volumes-from mysql-data mysql:5.7
+
+?
+
+CREATE TABLE user(id int PRIMARY KEY AUTO_INCREMENT, name VARCHAR(255)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+INSERT INTO user (name) VALUES ('APPLE'), ('ORANGE'), ('BANANA');
+// SQLから抜ける
+exit
+
+docker container stop mysql
+
+// ここから新規のコンテナを作ってデータを見る。上で作ったやり方を全く同じ
+docker container run -d --rm --name mysql -e "MYSQL_ALLOW_EMPTY_PASSWORD=yes" -e "MYSQL_DATABASE=volume_test" -e "MYSQL_USER=example" -e "MYSQL_PASSWORD=example" --volumes-from mysql-data mysql:5.7
+// ここも上と同じ
+?
+
+SELECT * FROM user;
+// SQLから抜ける
+exit
+
+
+
+解答
+
+--Dockerfile--
+
+FROM busybox
+VOLUME /var/lib/mysql
+CMD  ["bin/true"]
+
+----------------------
+docker image build -t example/mysql-data:latest .
+
+docker container run -d --name mysql-data example/mysql-data:latest
+
+docker container run -d --rm --name mysql -e "MYSQL_ALLOW_EMPTY_PASSWORD=yes" -e "MYSQL_DATABASE=volume_test" -e "MYSQL_USER=example" -e "MYSQL_PASSWORD=example" --volumes-from mysql-data mysql:5.7
+
+docker container exec -it mysql mysql -u root -p volume_test
+
+CREATE TABLE user(id int PRIMARY KEY AUTO_INCREMENT, name VARCHAR(255)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+INSERT INTO user (name) VALUES ('APPLE'), ('ORANGE'), ('BANANA');
+// SQLから抜ける
+exit
+
+docker container stop mysql
+
+// ここから新規のコンテナを作ってデータを見る。上で作ったやり方を全く同じ
+docker container run -d --rm --name mysql -e "MYSQL_ALLOW_EMPTY_PASSWORD=yes" -e "MYSQL_DATABASE=volume_test" -e "MYSQL_USER=example" -e "MYSQL_PASSWORD=example" --volumes-from mysql-data mysql:5.7
+// ここも上と同じ
+docker container exec -it mysql mysql -u root -p volume_test
+
+SELECT * FROM user;
+// SQLから抜ける
+exit
+

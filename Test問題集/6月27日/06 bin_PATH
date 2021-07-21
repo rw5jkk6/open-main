@@ -1,0 +1,28 @@
+問題
+desktopで Hello world のスクリプトを作る。
+コンテナ名にtestを作って、/home/binを作る。
+別のターミナルを立ち上げてコンテナにスクリプトをコピーする。
+コンテナに戻って/home/binにPATHを通して、シェルスクリプトを実行する
+
+解答
+-----hello.sh--
+#!/bin/bash
+echo "Hello worold"
+---------------
+chmod +x hello.sh
+
+docker container run -it --name test ubuntu
+mkdir -p /home/bin
+
+別のターミナルを立ち上げる
+
+docker container cp hello.sh test:/home/bin/
+
+コンテナに戻る
+
+cd /etc
+echo "export PATH=$PATH:/home/bin" >> bash.bashrc
+
+exec $SHELL
+
+hello.sh

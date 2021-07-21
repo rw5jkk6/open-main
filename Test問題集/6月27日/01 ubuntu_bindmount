@@ -1,0 +1,18 @@
+問題
+デスクトップにdockerフォルダを作る。
+そこにhello.txtを作り、中に[Hello world]と書く。
+dockerフォルダに移動して、ubuntuコンテナを作る。
+そのコンテナに/nakフォルダを作ってバインドマウントする。
+
+解答
+6/15を参照
+
+docker container run -it \ 
+       --rm \
+       --mount type=bind,src=$(pwd),dst=/nak \
+       ubuntu /bin/bash
+
+cd nak
+
+cat hello.txt
+

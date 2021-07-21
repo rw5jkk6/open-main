@@ -1,0 +1,16 @@
+問題
+ubuntuを立ち上げてcurlとjqコマンドをインストールする。
+Githubにある　weather.jsonを取得。
+
+https://raw.githubusercontent.com/rw5jkk6/OpenSample/main/weather.json
+
+weather.jsonからtitleを取得する。
+
+解答
+
+docker container run -it --rm ubuntu
+
+apt update
+apt install -y curl jq
+curl https://raw.githubusercontent.com/rw5jkk6/OpenSample/main/weather.json > weather.json
+cat weather.json | jq -r ".title"

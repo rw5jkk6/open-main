@@ -1,0 +1,41 @@
+問題
+vscodeでdockerの仮想環境をDockerfileを使って作る。
+Dockerfileを作る際に気をつけること3つ。
+1.リコメンドは入れない
+2.aptのキャッシュは削除する
+3.コンテナには/code-cというディレクトリを作る
+c言語で[Hello world]を出力するスクリプトの共有ライブラリを調べる
+
+----test.c-----------
+#include <stdio.h>
+
+int main(){
+    printf("Hello world\n");
+    return 0;
+}
+
+解答
+
+------Dockerfile-------
+FROM  ubuntu:latest
+
+RUN  apt-get update && \
+     apt-get install -y --no-install-recommends \
+        gcc \
+        g++   && \
+     rm -rf /var/lib/apt/lists/*
+
+WORKDIR /code-c
+
+CMD  ["/bin/bash"]
+
+----test.c-----------
+#include <stdio.h>
+
+int main(){
+    printf("Hello world\n");
+    return 0;
+}
+
+gcc test.c
+ldd a.out

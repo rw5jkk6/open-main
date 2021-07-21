@@ -1,0 +1,10 @@
+問題
+dockerのコンテナを削除する
+
+
+解答
+docker container ls -aq | xargs docker container rm -f
+
+または
+
+docker rm $(docker ps -aq)

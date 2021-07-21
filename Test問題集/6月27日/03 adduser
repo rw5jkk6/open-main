@@ -1,0 +1,16 @@
+問題
+
+一般ユーザーのディレクトリを作る。
+ubuntuにnakユーザーを登録する。
+以下を参考にする。
+
+home--nak--bin
+         |-etc
+         |-usr
+         |-var
+      
+解答
+
+cd /etc/skel
+mkdir bin etc usr var 
+adduser nak

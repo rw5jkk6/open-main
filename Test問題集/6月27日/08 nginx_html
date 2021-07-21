@@ -1,0 +1,18 @@
+問題
+nginxを立ち上げて８０８０ポートでブラウザをチェックする
+nginxコンテナに接続して
+/usr/share/nginx/html/index.htmlを書き換えて、hello worldに書き換えてブラウザをチェックする
+
+
+解答
+docker container run -it --name test_nginx -p 8080:80 nginx:latest
+
+localhost:8080 ブラウザをチェックする
+
+docker container exec -it test_nginx /bin/bash
+cd /usr/share/nginx/html/index.html
+echo "Hello wolrd" > index.html
+
+localhost:8080 ブラウザをチェックする
+
+// 注意　コンテナ立ち上げ時に/bin/bashを書くとサイトが立ち上がらない

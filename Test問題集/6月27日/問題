@@ -1,0 +1,114 @@
+
+[1]
+デスクトップにdockerフォルダを作る。
+そこにhello.txtを作り、中に[Hello world]と書く。
+dockerフォルダに移動して、ubuntuコンテナを作る。
+そのコンテナに/nakフォルダを作ってバインドマウントする。
+
+[2]
+for文とif文で以下の文を表示するシェルスクリプトを作る
+
+1は奇数です。
+2は偶数です。  
+3は奇数です。 
+4は偶数です。
+5は奇数です。 
+6は偶数です。 
+7は奇数です。 
+8は偶数です。 
+9は奇数です。 
+10は偶数です
+
+[3]
+一般ユーザーのディレクトリを作る。
+ubuntuにnakユーザーを登録する。
+以下を参考にする。
+
+home--nak--bin
+         |-etc
+         |-usr
+         |-var
+      
+[4]
+ubuntuを立ち上げてcurlとjqコマンドをインストールする。
+Githubにある　weather.jsonを取得。
+
+https://raw.githubusercontent.com/rw5jkk6/OpenSample/main/weather.json
+
+weather.jsonからtitleを取得する。
+
+[5]
+vscodeでdockerの仮想環境をDockerfileを使って作る。
+Dockerfileを作る際に気をつけること3つ。
+1.リコメンドは入れない
+2.aptのキャッシュは削除する
+3.コンテナには/code-cというディレクトリを作る
+c言語で[Hello world]を出力するスクリプトの共有ライブラリを調べる
+
+----test.c-----------
+#include <stdio.h>
+
+int main(){
+    printf("Hello world\n");
+    return 0;
+}
+
+[6]
+desktopで Hello world のスクリプトを作る。
+コンテナ名にtestを作って、/home/binを作る。
+別のターミナルを立ち上げてコンテナにスクリプトをコピーする。
+コンテナに戻って/home/binにPATHを通して、シェルスクリプトを実行する
+
+[7]
+6問目のHello world のスクリプトを使う。
+ubuntuコンテナを作る。
+コンテナのPATHを確認する。
+他のターミナルを立ち上げてスクリプトをコンテナの/binにコピーする。
+コンテナにhello.shがあるか確認する。
+シェルスクリプトを実行する。
+
+[8]
+nginxを立ち上げて８０８０ポートでブラウザをチェックする
+nginxコンテナに接続して
+/usr/share/nginx/html/index.htmlを書き換えて、hello worldに書き換えてブラウザをチェックする
+
+[9]
+dockerのコンテナを削除する
+
+[10]
+MySqlを使ってDataVolumeコンテナを作る
+busyboxを利用する
+MySqlのコンテナを作る
+以下の？のコマンドを打つ。それ以外はコピペする
+
+--Dockerfile--
+
+FROM busybox
+VOLUME /var/lib/mysql
+CMD  ["bin/true"]
+
+----------------------
+?
+
+?
+
+docker container run -d --rm --name mysql -e "MYSQL_ALLOW_EMPTY_PASSWORD=yes" -e "MYSQL_DATABASE=volume_test" -e "MYSQL_USER=example" -e "MYSQL_PASSWORD=example" --volumes-from mysql-data mysql:5.7
+
+?
+
+CREATE TABLE user(id int PRIMARY KEY AUTO_INCREMENT, name VARCHAR(255)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+INSERT INTO user (name) VALUES ('APPLE'), ('ORANGE'), ('BANANA');
+// SQLから抜ける
+exit
+
+docker container stop mysql
+
+// ここから新規のコンテナを作ってデータを見る。上で作ったやり方を全く同じ
+docker container run -d --rm --name mysql -e "MYSQL_ALLOW_EMPTY_PASSWORD=yes" -e "MYSQL_DATABASE=volume_test" -e "MYSQL_USER=example" -e "MYSQL_PASSWORD=example" --volumes-from mysql-data mysql:5.7
+// ここも上と同じ
+?
+
+SELECT * FROM user;
+// SQLから抜ける
+exit

@@ -1,0 +1,22 @@
+問題
+6問目のHello world のスクリプトを使う。
+ubuntuコンテナを作る。
+コンテナのPATHを確認する。
+他のターミナルを立ち上げてスクリプトをコンテナの/binにコピーする。
+コンテナにhello.shがあるか確認する。
+シェルスクリプトを実行する。
+
+解答
+docker container run -it --name test ubuntu
+
+$PATH
+
+他のターミナルを立ち上げる
+
+docker container cp hello.sh test:/bin/hello.sh
+
+コンテナに戻る
+
+ls /bin | grep hello.sh
+
+hello.sh
