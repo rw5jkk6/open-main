@@ -1,9 +1,33 @@
 - 実行だけなら go run file名　でOK
-- packageでスコープを変えれる
+- scope
+  - Goはpackageでスコープを変えれる
+  - Cはファイルでスコープ(externがない)
 - セミコロンがいらない
 - fmtパッケージがstdio.hに当たる
 - 変数の定義には2つある
   - 明示的に　　　var a int =5
   - 暗示的に　　　a := 5
-
-
+- 固定長と可変長に専用の構文がある
+  - 固定長
+    - 配列
+  - 可変長
+    - スライス
+    - map
+    - channel
+    - make
+    - new  
+- 制御構造(gotoは両方ある)
+  - switchがある
+  - defer
+  - panic,recover
+  - range
+- 関数
+  - func を書く　　
+  - 複数の戻り値を返せる
+  - 無名関数　　 
+- ポインタ
+  - ポインタのキャストはできない
+  - ポインタ演算できない
+  - 自動でnilが入る
+- インターフェイスがある 
+- 並行処理(Goroutine)
