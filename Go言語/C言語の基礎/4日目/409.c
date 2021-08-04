@@ -1,3 +1,9 @@
+/*
+func (r *Rand)Seed(seed int64)
+Rand構造体は乱数が書いたもの
+*/
+
+
 package main
 
 import (
