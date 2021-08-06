@@ -1,16 +1,39 @@
-package main
+/*
 
+ポイント
+＊コンストラクター関数
+＊埋め込みによる継承みたいなことができる
+＊フィールドを転送できる
+
+*/
+
+package main
+ 
 import (
-	"fmt"
+   "fmt"
 )
 
-func main(){
-	a:="amc"
-	b:=a
-	fmt.Println(b)
+type Vertex struct{
+   x, y int
 }
 
-// 私の名前山田太郎はです。年齢は20歳です。
-// イニシャルはYです。
-// イニシャルはYです。
-// 1.200000 + 2.700000 = 3.900000
+type Vertex3D struct{
+   Vertex
+   z int
+}
+
+func (v Vertex3D)Area3D() int{
+   return v.x * v.y * v.z
+}
+
+func New(x, y, z int) *Vertex3D{
+   return &Vertex3D{
+      Vertex{x, y}, z}
+}
+
+func main(){
+   v := New(2, 3, 4)
+   fmt.Println(v.Area3D())
+}
+
+// 24
