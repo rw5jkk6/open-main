@@ -14,7 +14,7 @@
 - セミコロンがいらない
 - グローバル変数がなく、パッケージ変数がある
 - fmtパッケージがstdio.hに当たる
-  - 書式指定でCとの違い
+  - [書式指定でCとの違い](https://github.com/rw5jkk6/open-main/blob/main/Go%E8%A8%80%E8%AA%9E/Go%E3%81%AE%E6%96%87%E6%B3%95/string-format.go)
     - %T 型を調べることができる 
     - %v オールマイティに使える
 - 変数の定義には2つある
