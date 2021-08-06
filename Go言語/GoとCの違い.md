@@ -1,3 +1,4 @@
+文末に＊があるのは基礎の本には書いてなかったが、Cにはあるもの
 ----------------------------------
 ### ポインタは型につける
 
@@ -15,27 +16,36 @@
 - fmtパッケージがstdio.hに当たる
 - 変数の定義には2つある
   - 明示的に　　　var a int =5
-  - 暗示的に　　　a := 5
+  - 暗示的に　　　a := 5    (型推論している)
 - 基本型
+  - bool(論理値)がある
+  - byte型はuint8の別名
   - doubleはなくてfloat64
   - 実装依存の型がある int, uint, uintptr
-  - charはなくruneがある 
+  - charはなくruneがある runeは正確にはunicodeのコードポイントを表す特殊な整数型
+  - 文字列
+    - ダブルクォート  " " 
+    - バッククォート(raw文字列)   \`  \`
 - 修飾子
   - constは定数,Cのconstはread only
 - 固定長と可変長に専用の構文がある
   - 固定長
-    - 配列
+    - 配列   
+      - (例)  var a[5]int{}
+      - (例)  var a[...]int{} 
   - 可変長
-    - スライス
+    - スライス 
+      - (例)  var a[]int{}
+      - (例)  make([]int, 0, 5)
     - map
     - channel
-    - make
     - new  
 - 制御構造(gotoは両方ある)
   - switchがある
   - defer
   - panic,recover
   - range
+- nilがある。CのNULLみたいなもの
 - 関数
   - func を書く　　
   - 複数の戻り値を返せる
