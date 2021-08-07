@@ -2,19 +2,24 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
+	"sort"
+	"time"
 )
 
-type Vertex struct{
-	X, Y int
-}
-
-func Area(v Vertex) int{
-	return v.X * v.Y
-}
-
+const SIZE = 4
 
 func main(){
-	v := Vertex{X: 3, Y: 4}
-	n := Area(v)
-	fmt.Println(n) // 12
+
+   var a = make([]int, SIZE)
+
+   rand.Seed(time.Now().UnixNano())
+   for i := 0; i < SIZE; i++{
+      a[i] = rand.Intn(10)
+   } 
+   fmt.Println(a)
+
+   sort.Ints(a)
+   
+   fmt.Println(a)
 }
