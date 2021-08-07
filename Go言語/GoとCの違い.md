@@ -21,7 +21,7 @@
   - 明示的に　　　var a int =5
   - 暗示的に　　　a := 5    (型推論している)
 - 基本型
-  - bool(論理値)がある
+  - [bool(論理値)がある](https://github.com/rw5jkk6/open-main/blob/main/Go%E8%A8%80%E8%AA%9E/Go%E3%81%AE%E6%96%87%E6%B3%95/bool.go)
   - byte型はuint8の別名
   - doubleはなくてfloat64
   - 実装依存の型がある int, uint, uintptr
