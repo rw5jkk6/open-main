@@ -65,6 +65,8 @@
     - インスタンスを作ってから一つづつ代入 
   - Goではコンストラクタ関数(New)を使うことがある
   - [Embeddingを使うと継承みたいなことが使える](https://github.com/rw5jkk6/open-main/blob/main/Go%E8%A8%80%E8%AA%9E/Go%E3%81%AE%E6%96%87%E6%B3%95/embeded-new.go)
+  - メソッド
+    - メソッドの転送 
 - ポインタ
   - ポインタのキャストはできない
   - ポインタ演算できない
