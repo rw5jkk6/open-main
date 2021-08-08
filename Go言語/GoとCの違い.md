@@ -46,6 +46,7 @@
     - channel
     - new  
 - 制御構造(gotoは両方ある)
+  - 簡易文付きifがある
   - switchがある
   - defer
   - panic,recover
