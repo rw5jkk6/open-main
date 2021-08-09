@@ -47,6 +47,7 @@
     - new  
 - 制御構造(gotoは両方ある)
   - [簡易文付きifがある](https://github.com/rw5jkk6/open-main/blob/main/Go%E8%A8%80%E8%AA%9E/Go%E3%81%AE%E6%96%87%E6%B3%95/if.go)
+  - Goには三項演算子がない
   - switchがある
   - defer
   - panic,recover
