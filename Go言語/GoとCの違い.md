@@ -55,7 +55,7 @@
 - nilがある。CのNULLみたいなもの
 - [関数](https://github.com/rw5jkk6/open-main/blob/main/Go%E8%A8%80%E8%AA%9E/Go%E3%81%AE%E6%96%87%E6%B3%95/function.go)
   - func を書く　　
-  - 複数の戻り値を返せる
+  - 複数の戻り値を返せる(C言語の場合ポインタを使う)
   - 戻り値に変数名をつけられる
   - 無名関数　　 
   - クロージャ(戻り値に関数の設定)
