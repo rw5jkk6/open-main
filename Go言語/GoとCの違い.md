@@ -38,10 +38,11 @@
     - 配列   
       - (例)  var a[5]int{}
       - (例)  var a[...]int{} 
-  - 可変長
+  - 可変長 (参照なのでポインタみたいに使える)
     - スライス 
-      - (例)  var a[]int{}
+      - (例)  var b[]int{}
       - (例)  make([]int, 0, 5)
+      - (例)  c := a[0:2]
     - map
     - channel
     - new  
@@ -84,3 +85,4 @@
 - Enumはiotaを使う*
 - goto*
 - 並行処理(Goroutine)
+  - forとselectを使ったデザインパターンがある
