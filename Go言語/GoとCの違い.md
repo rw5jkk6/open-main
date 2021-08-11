@@ -31,6 +31,7 @@
   - 文字列
     - ダブルクォート  " " 
     - バッククォート(raw文字列)   \`  \`
+  - interface{}がある
 - 修飾子
   - constは定数,Cのconstはread only
 - 固定長と可変長に専用の構文がある
@@ -44,7 +45,9 @@
       - (例)  make([]int, 0, 5)
       - (例)  c := a[0:2]
     - map
-    - channel
+    - channel(waitよりもchannelの方が推奨)
+      - buffered有り
+      - bufferedなし 
     - new  
 - 制御構造(gotoは両方ある)
   - [簡易文付きifがある](https://github.com/rw5jkk6/open-main/blob/main/Go%E8%A8%80%E8%AA%9E/Go%E3%81%AE%E6%96%87%E6%B3%95/if.go)
@@ -58,10 +61,11 @@
   - func を書く　　
   - 複数の戻り値を返せる(C言語の場合ポインタを使う)
   - 戻り値に変数名をつけられる
-  - 無名関数　　 
-  - クロージャ(戻り値に関数の設定)
-    - [プロパティでキャプチャ](https://github.com/rw5jkk6/open-main/blob/main/Go%E8%A8%80%E8%AA%9E/Go%E3%81%AE%E6%96%87%E6%B3%95/closure/closure-localvar.go)
-    - [引数でキャプチャ](https://github.com/rw5jkk6/open-main/blob/main/Go%E8%A8%80%E8%AA%9E/Go%E3%81%AE%E6%96%87%E6%B3%95/closure/closure-arg.go)　->　　関数の動的な生成ができる
+  - 無名関数
+    - 引数に関数を持てる
+    - クロージャ(戻り値に関数の設定)
+      - [プロパティでキャプチャ](https://github.com/rw5jkk6/open-main/blob/main/Go%E8%A8%80%E8%AA%9E/Go%E3%81%AE%E6%96%87%E6%B3%95/closure/closure-localvar.go)
+      - [引数でキャプチャ](https://github.com/rw5jkk6/open-main/blob/main/Go%E8%A8%80%E8%AA%9E/Go%E3%81%AE%E6%96%87%E6%B3%95/closure/closure-arg.go)　->　　関数の動的な生成ができる
 - 構造体
   - 初期化が異なる。
     - 複合リテラル
@@ -86,3 +90,4 @@
 - goto*
 - 並行処理(Goroutine)
   - forとselectを使ったデザインパターンがある
+  - for, select, defaultのデザインパターンがある
