@@ -5,7 +5,12 @@ import (
 )
 
 func main(){
-   // var s1[4] = {'a', 'b'}  こういう書き方はできない
+   /* 
+   var s1[4] = {'a', 'b', 'c', '¥0'}  
+   こういう書き方はできない
+   これは下の書き方をするとcコンパイラが自動で文字列を
+   charの配列にしてくれる特別な仕様のため   
+   */
    var s2 string = "Hello world"
    var s3 string
 
