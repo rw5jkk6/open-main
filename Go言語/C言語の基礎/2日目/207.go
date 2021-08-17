@@ -10,6 +10,7 @@ func main(){
 //    var d1 float32
 //    d1 = 1.23
 //    i1 = d1   //Goでは暗黙的な型変換ができない
+//    cannot use d1 (type float32) as type int in assignment
 
    var i2, j2 int
    var d2, e2 float32
