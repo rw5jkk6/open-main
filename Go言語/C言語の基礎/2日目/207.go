@@ -5,6 +5,12 @@ import (
 )
 
 func main(){
+	
+//    var i1 int
+//    var d1 float32
+//    d1 = 1.23
+//    i1 = d1   //Goでは暗黙的な型変換ができない
+
    var i2, j2 int
    var d2, e2 float32
 
