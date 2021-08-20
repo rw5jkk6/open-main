@@ -18,7 +18,7 @@ func main(){
 	fmt.Println(nn)   // <nil>
 
 	var m []int      
-	fmt.Println(m)   // []
+	fmt.Println(m)   // []  <- <nil>　と等価らしい []はポインタみたいなものか
 	
 	var mm *[]int
 	fmt.Println(mm)   // <nil>
