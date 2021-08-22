@@ -4,21 +4,25 @@ import (
 	"fmt"
 )
 
-func main(){
-	name := []string{"satou", "suzuki", "yamada"}
-	for i, v := range name{
-		fmt.Println(i, v)
-	}
+type human interface {
+	say()
+	walk()
+}
 
-	fmt.Println("----------------")
+type otokonomusume struct {
+	name string
+}
 
-	for i := range name{
-		fmt.Println(i)
-	}
+func (s otokonomusume) say() {
+	fmt.Println("せりにゃん好き")
+}
 
-	fmt.Println("----------------")
+func (s otokonomusume) walk() {
+	fmt.Println("せりにゃんに会いに行く")
+}
 
-	for _ , v := range name{
-		fmt.Println(v)
-	}
+func main() {
+	n := otokonomusume{"hitoshi"}
+   n.say()
+   n.walk()
 }
