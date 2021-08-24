@@ -31,7 +31,8 @@ func (p Pn)average() int{
 func main(){
    p := Pn{color: "white",
             size:size{thick: 3,
-                      length: length{normal: 3, beast: 5},
+                      length: length{normal: 3, 
+				     beast: 5},
             },
          }
    
