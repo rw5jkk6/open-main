@@ -70,7 +70,7 @@
       - [プロパティでキャプチャ](https://github.com/rw5jkk6/open-main/blob/main/Go%E8%A8%80%E8%AA%9E/Go%E3%81%AE%E6%96%87%E6%B3%95/closure/closure-localvar.go)
       - [引数でキャプチャ](https://github.com/rw5jkk6/open-main/blob/main/Go%E8%A8%80%E8%AA%9E/Go%E3%81%AE%E6%96%87%E6%B3%95/closure/closure-arg.go)　->　　関数の動的な生成ができる
 - 構造体
-  - 初期化が異なる。
+  - [初期化が異なる](https://github.com/rw5jkk6/open-main/tree/main/Go%E8%A8%80%E8%AA%9E/Go%E3%81%AE%E6%96%87%E6%B3%95/struct/original)
     - 複合リテラル
     - インスタンスを作ってから一つづつ代入 
     - newを使う
