@@ -1,3 +1,8 @@
+/*
+5-addFactory.goの５を足しただけで、
+基本的に同じ
+*/
+
 package main
  
 import (
@@ -5,9 +10,8 @@ import (
 )
 
 func add5(n int)func(int)int{
-	r := n + 5
 	return func(m int)int{
-		return r + m
+		return n + 5 + m
 	}
 }
 
