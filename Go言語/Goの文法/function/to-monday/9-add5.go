@@ -1,5 +1,5 @@
 /*
-5-addFactory.goの５を足しただけで、
+5-addFactory.goに５を足しただけで、
 基本的に同じ
 */
 
