@@ -14,11 +14,10 @@ func onna()string{
 
 func main(){
 	var otokonomusume func()string
+	// otokonomusume := otoko これでもOK
 	otokonomusume = otoko
 	fmt.Println(otokonomusume())
 
 	otokonomusume = onna
 	fmt.Println(otokonomusume())
-
-
 }
