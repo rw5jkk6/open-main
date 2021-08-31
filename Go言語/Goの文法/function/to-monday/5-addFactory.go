@@ -16,6 +16,14 @@ func addFactory(n int)func(int)int{
 	}
 }
 
+//　　以下のようにも書けるが、仮引数で保存できるので意味はない
+// func addFactory(n int)func(int)int{
+// 	var l int = n
+// 	return func(m int)int{
+// 		return l + m
+// 	}
+// }
+
 func main(){
 	add5 := addFactory(5)
 	r := add5(10)
