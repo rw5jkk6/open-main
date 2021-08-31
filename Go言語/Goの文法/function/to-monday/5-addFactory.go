@@ -1,3 +1,9 @@
+/*
+add5 := addFactory(5)でaddFactory()の仮引数に５が保存される
+add5()の中には　n=5が保存されているので、足した15が出力できる
+*/
+
+
 package main
  
 import (
