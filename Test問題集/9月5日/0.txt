@@ -1,0 +1,5 @@
+ageを1つ足すメソッドを作る
+
+type Person struct{
+    age int
+}

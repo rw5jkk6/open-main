@@ -1,0 +1,7 @@
+ポインタを使って、Vertex{X:3, Y:4}の中身を10倍する
+
+type Vertex struct{
+   X int
+   Y int
+}
+
