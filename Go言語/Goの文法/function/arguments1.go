@@ -10,6 +10,7 @@ import (
 )
 
 func add10(i int, f func(int)int){
+	//callbackの時にはここに非同期処理が入ることがある
 	result := f(i)
 	fmt.Println(result)
 }
