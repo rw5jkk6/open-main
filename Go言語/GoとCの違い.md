@@ -66,7 +66,7 @@
   - 戻り値に変数名をつけられる
   - 無名関数
     - 引数に関数を持てる
-      - 非同期処理を使うと、コールバック関数として使える 
+      - 非同期処理では、コールバック関数として使える 
     - クロージャ(戻り値に関数の設定)
       - [プロパティでキャプチャ](https://github.com/rw5jkk6/open-main/blob/main/Go%E8%A8%80%E8%AA%9E/Go%E3%81%AE%E6%96%87%E6%B3%95/closure/closure-localvar.go)
       - [引数でキャプチャ](https://github.com/rw5jkk6/open-main/blob/main/Go%E8%A8%80%E8%AA%9E/Go%E3%81%AE%E6%96%87%E6%B3%95/closure/closure-arg.go)　->　　関数の動的な生成ができる
