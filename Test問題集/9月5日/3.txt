@@ -1,2 +1,16 @@
-mapでnakayaは3、serinaは20を作る。
+変数mにしてmapでnakayaは3、serinaは20を作る。
 次にnakayaは４に変更
+ともに？を埋める
+
+package main
+
+import (
+	"fmt"
+)
+
+func main(){
+   ?
+   fmt.Println(m)
+   ？
+   fmt.Println(m)
+}
