@@ -1,4 +1,10 @@
-ポインタを使って、Vertex{X:3, Y:4}の中身を10倍する関数を作る。以下のを参考にする
+ポインタを使って、Vertex{X:3, Y:4}の中身を10倍する関数と？の部分を書く。以下のを参考にする
+
+package main
+ 
+import (
+   "fmt"
+)
 
 type Vertex struct{
    X int
@@ -6,9 +12,8 @@ type Vertex struct{
 }
 
 
-
 func main(){
-   v := Vertex{X: 2, Y: 3}
-   v.Scale(10)
-   fmt.Printf("%+v\n", v)
+   ?
+   Scale(v, 10)
+   fmt.Printf("%+v\n", *v)  // {X:20 Y:30}
 }
