@@ -1,1 +1,1 @@
-rangeを使って{"satou","suzuki","yamada"}を出力する
+rangeを使ってsatou,suzuki,yamadaを配列にして苗字だけを出力する
