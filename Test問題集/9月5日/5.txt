@@ -1,2 +1,14 @@
 文字列や整数を入れる型は？
 数値にして、２を足す
+前後から推論して？を埋める
+
+func main(){
+   ?
+   a = "Hello"
+   a = 1
+   fmt.Println(a)
+   ?
+   c := b + 2
+   fmt.Println(c)
+
+}
