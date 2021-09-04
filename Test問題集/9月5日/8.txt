@@ -1,1 +1,15 @@
-int16の型をnpにエイリアスにして、１センチ成長するメソッドを作る
+int16の型をnpにエイリアスにする。?を書く
+
+?
+
+func (n *npl)Grow(){
+   *n++
+}
+
+func main(){
+   var n npl = 3
+   n.Grow()
+   fmt.Println(n)　// 4
+   n.Grow()
+   fmt.Println(n)  // 5
+}
