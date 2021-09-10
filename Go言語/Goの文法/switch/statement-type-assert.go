@@ -6,8 +6,7 @@ import (
 
 func main(){
 	var s interface{}
-	s = "summer"
-	switch s.(type){
+	switch s = "summer"; s.(type){
 	case int:
 		fmt.Println("int")
 	case string:
