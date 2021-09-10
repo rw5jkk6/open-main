@@ -6,6 +6,7 @@ import (
 
 func main(){
 	var s interface{}
+	// switch 簡易文; 式
 	switch s = "summer"; s.(type){
 	case int:
 		fmt.Println("int")
