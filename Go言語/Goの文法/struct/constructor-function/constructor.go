@@ -1,3 +1,10 @@
+/*
+コンストラクタ関数は構造体を初期化するためのもの
+コンストラクタ関数は関数めいの頭をnewをつける
+ここでは２パターンある
+*/
+
+
 package main
  
 import (
@@ -8,7 +15,7 @@ type pl struct{
    name string
    npl int
 } 
-
+// パターン１
 func newpl(name string, npl int) *pl{
    p := new(pl)
    p.name = name
@@ -16,6 +23,7 @@ func newpl(name string, npl int) *pl{
    return p
 }
 
+// パターン２
 func newpl2(name string, npl int) *pl{
    return &pl{
       name: name,
