@@ -10,6 +10,7 @@ import (
 
 func main(){
 	day := 5
+	// switchと { の間にはtrueがある
 	switch {
 	case 0 > day && day < 3:
 		fmt.Println("0 < day < 3")
