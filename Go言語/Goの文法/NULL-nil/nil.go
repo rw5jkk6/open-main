@@ -22,6 +22,9 @@ func main(){
 	
 	var mm *[]int
 	fmt.Println(mm)   // <nil>
+	
+	c := make([]int, 4, 5)
+	fmt.Println(c)    // [0 0 0 0]
 
 	var a interface{}
 	fmt.Println(a)   // <nil>
