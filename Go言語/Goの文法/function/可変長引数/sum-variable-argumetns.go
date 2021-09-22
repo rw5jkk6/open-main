@@ -4,6 +4,7 @@ import (
    "fmt"
 )
 
+// Swiftの可変長引数は Int...
 func sum(a ...int) int{
    n := 0
    for _, v := range a{
