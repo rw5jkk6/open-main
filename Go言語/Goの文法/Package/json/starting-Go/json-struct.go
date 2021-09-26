@@ -30,3 +30,4 @@ func main(){
    }
    fmt.Printf("%+v\n", u)
 }
+// &{Name:Hitoshi Pl:3 BeastPl:5}
