@@ -3,3 +3,11 @@
 
 - コマンドにはオプション名を与える必要がある
   - ./test -n 名前
+
+- 論点
+  - time cf 
+    -  time.sleep
+    -  time.Now
+    -  AddDate
+  - flag
+    - StringVar 
