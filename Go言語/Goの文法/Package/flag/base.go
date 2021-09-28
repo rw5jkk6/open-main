@@ -12,3 +12,14 @@ func main(){
    flag.Parse()
    fmt.Printf("%sは年内にせりにゃんと結婚する\n", name)
 }
+
+
+// import (
+// 	"fmt"
+// 	"os"
+// )
+
+// func main(){
+//    c := os.Args[1]
+//    fmt.Printf("%sは年内にせりにゃんと結婚する\n", c)
+// }
