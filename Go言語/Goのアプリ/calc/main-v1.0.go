@@ -30,24 +30,33 @@ func main(){
       switch num{
       case ten2:
          fmt.Scanf("%d",&ten2_num)
+         fmt.Printf("\n\n")
          fmt.Println("---------------")
          fmt.Printf("%b\n", ten2_num)
          fmt.Println("---------------")
+         fmt.Printf("\n\n")
 
       case ten16:
          fmt.Scanln(&ten16_num)
+         fmt.Printf("\n\n")
          fmt.Println("---------------")
          fmt.Printf("%x\n", ten16_num)
          fmt.Println("---------------")
+         fmt.Printf("\n\n")
 
       case pow:
          fmt.Scanln(&pow_num)
+         fmt.Printf("\n\n")
          fmt.Println("---------------")
          fmt.Printf("%v\n", math.Pow(2, pow_num))
          fmt.Println("---------------")
+         fmt.Printf("\n\n")
 
       case exit:
          return
+      
+      default:
+         fmt.Printf("\n\n0~3の数字を入力してください\n\n\n")
       }
    }
 }
