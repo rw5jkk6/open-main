@@ -1,16 +1,14 @@
 package main
 
 import (
-	"flag"
 	"fmt"
 	"math/rand"
+	"os"
 	"time"
 )
 
 func main(){
-   var name string
-   flag.StringVar(&name, "n", "" , "")
-   flag.Parse()
+   name := os.Args[1]
 
    rand.Seed(time.Now().UnixNano())
    r := rand.Intn(5)
