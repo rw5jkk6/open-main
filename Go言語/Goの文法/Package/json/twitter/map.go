@@ -19,6 +19,7 @@ func main(){
 
    fmt.Println(dat)
 
+   // mapの場合、使う時にtypeアサーションをしなければならない
    num := dat["num"].(float64)
    fmt.Println(num)
 
