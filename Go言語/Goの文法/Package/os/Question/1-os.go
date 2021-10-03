@@ -7,6 +7,7 @@ import (
 )
 
 func main(){
+   // スライスの一部を切り取れる 
    arg := os.Args[1:]
    for _, v := range arg{
       fmt.Println(v)
