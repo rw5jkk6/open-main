@@ -6,7 +6,7 @@ import (
 )
 
 func main(){
-   f, err := os.Open("test.txt")
+   f, err := os.Open("test.go")
    if  err != nil{
       fmt.Println(err)
    }
