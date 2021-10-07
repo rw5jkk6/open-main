@@ -15,4 +15,5 @@ func main(){
    if i != nil{
       fmt.Println(*i)
    }
+   // iがnil以外なら、実行される。なので、ここでは何も実行されない
 }
