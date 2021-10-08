@@ -13,11 +13,17 @@ type person struct{
 // }
 
 // 2-panic.goでは != だったので注意
+// errorを出さないようにしている
 func (p *person)inc(){
    if p == nil{
       return 
    }
    p.age++
+   
+   // これでもOK
+   // if p != nil{
+   //    p.age++
+   // }
 }
 
 func main(){
