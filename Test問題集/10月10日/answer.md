@@ -31,7 +31,7 @@ func main(){
    fmt.Printf("hitoshiは%sで妥協する\n", array[rand.Intn(len(array2)+1)])
 }
 ```
-12. ~ 複合リテラルとコンストラクタ関数の違いは? ~
+12. ~複合リテラルとコンストラクタ関数の違いは?~
 13. unix時間とは
 14. unsignedとは
 15. osパッケージを使ってカレントディレクトリを表示
