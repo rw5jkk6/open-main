@@ -31,13 +31,24 @@ func main(){
    fmt.Printf("hitoshiは%sで妥協する\n", array[rand.Intn(len(array2)+1)])
 }
 ```
-12. ~複合リテラルとコンストラクタ関数の違いは?~
-13. unix時間とは
+11. ~複合リテラルとコンストラクタ関数の違いは?~
+12. unix時間とは
 14. unsignedとは
 15. osパッケージを使ってカレントディレクトリを表示
-16. mathパッケージを使って3と2の大きい方を表示
-17. stringsパッケージを使って serina を大文字にする
-18. strconvパッケージを使ってint 10を文字列にする
-19. 文字列hogeをintにすることで、panicを起こす
-20. var p *int　の出力は
-21. User構造体を作って、name, plフィールドを作って "hitoshi","3"を入れる.そしてjsonに変換する
+```title:go
+   dir, _ := os.Getwd()
+   fmt.Println(dir)
+```
+18. mathパッケージを使って3と2の大きい方を表示
+```title:go
+    fmt.Println(math.Max(3, 2))
+```
+20. stringsパッケージを使って serina を大文字にする
+```title:go
+    fmt.Println(strings.ToUpper("serina"))
+```
+
+22. strconvパッケージを使ってint 10を文字列にする
+23. 文字列hogeをintにすることで、panicを起こす
+24. var p *int　の出力は
+25. User構造体を作って、name, plフィールドを作って "hitoshi","3"を入れる.そしてjsonに変換する
