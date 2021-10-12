@@ -49,6 +49,20 @@ func main(){
 ```
 
 22. strconvパッケージを使ってint 10を文字列にする
-23. 文字列hogeをintにすることで、panicを起こす
-24. var p *int　の出力は
-25. User構造体を作って、name, plフィールドを作って "hitoshi","3"を入れる.そしてjsonに変換する
+```title:go
+        var num int64 = 10
+	s := strconv.FormatInt(num, 10)
+	fmt.Println(s)
+
+	// defaultの数字はintなので、なぜ変換するのか不思議
+	s1 := strconv.FormatInt(20, 10)
+	fmt.Println(s1)
+```
+
+24. string 30　を int 30に変換してfmt.Printf()で出力する
+```title:go
+	v, _ := strconv.ParseInt("30",10,10)
+	fmt.Println(v)
+```
+26. var p *int　の出力は     nil
+27. User構造体を作って、name, plフィールドを作って "hitoshi","3"を入れる.そしてjsonに変換する
