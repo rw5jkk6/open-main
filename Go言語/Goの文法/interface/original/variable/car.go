@@ -9,6 +9,7 @@ type car interface{
 }
 
 type keicar struct{
+   speed int
    place string
 }
 
@@ -18,6 +19,7 @@ func (k keicar)forWheelRun(){
 
 type sportscar struct{
    speed int
+   place string
 }
 
 func (s sportscar)forWheelRun(){
@@ -25,8 +27,8 @@ func (s sportscar)forWheelRun(){
 }
 
 func main(){
-   var c car = keicar{"コンビニ"}
+   var c car = keicar{place: "コンビニ"}
    c.forWheelRun()
-   c = sportscar{150}
+   c = sportscar{speed:150}
    c.forWheelRun()
 }
