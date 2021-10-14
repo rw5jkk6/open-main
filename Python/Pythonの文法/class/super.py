@@ -7,6 +7,7 @@ class A:
 
 class B(A):
     def __init__(self, a, b):
+        # super()で親クラスを呼び出して,methodを呼び出している
         super().__init__(a)
         self.b = b
     def walk_run(self):
