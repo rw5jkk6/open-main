@@ -1,5 +1,5 @@
 - 拡張機能でPython extension for vscode をインストール
-- アクティビティバー(一番左の)から虫のところを押す
+- アクティビティバー(一番左の)から虫のところを押す。または ctrl + shift + d
 - launch.jsonファイルを作成する
 - Python fileを選ぶ
 - 矢印を押す
