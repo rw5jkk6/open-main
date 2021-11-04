@@ -1,4 +1,0 @@
-- json -> struct
-  - User構造体を作って、フィールド名にName, Pl(int), BeastPl(int)を作って、json形式を作って構造体に変換する
-- struct -> json
-  - 上と同じ構造体を作って、　複合リテラルでjson形式にする
