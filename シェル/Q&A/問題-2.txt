@@ -1,0 +1,140 @@
+コマンド問題集(2)
+
+●uniqコマンドを使う。-> は出力の数。
+以下のuniq.txtファイルを作る
+
+japan
+america
+france
+france
+japan
+england
+america
+
+⚪︎ユニークだけを表示する        ->4
+⚪︎重複しない行だけ表示する    ->1
+⚪︎重複した行だけ表示する       ->3
+⚪︎fileの重複行を数えて、降順にする 
+
+sort uniq.txt | uniq -c | sort -rn
+
+●ターミナル内で計算する     1 + 1 = 2
+⚪︎合計の２だけを出力する          expr  1 + 1
+⚪︎コマンド置き換えを使って  1 + 1 = 2 を出力する   echo 1 + 1 = $(expr  1 + 1 )   または　echo 1 + 1 = ` expr  1 + 1 `
+⚪︎コマンド展開で　1 + 1 = 2 を出力する     echo 1 + 1 = $(( 1 + 1 ))
+
+●aliasを使う
+⚪︎lsをls -Fのエイリアスにする
+⚪︎本来のlsをパスで実行する
+⚪︎本来のlsをコマンドで実行する
+⚪︎エイリアスを解除する
+
+●findコマンドを使う。copyで使ったdirディレクトリを使う
+dir-|-dir2-|-fileA
+      |          |-fileB
+      |          |-fileD
+      |
+      |-dir3-dir4
+      |-fileA
+      |-fileB
+      |-fileC
+⚪︎fileAの場所を見つける
+⚪︎ディレクトリの数はいくつ
+⚪︎dir2の空のファイルを詳細表示する
+⚪︎dir2の空のファイルを削除する
+<応用>
+ディレクトリを作ってtouch -t 202101010000 date.txtを作る
+⚪︎2日以上前、一年以内で上の空ファイルを見つけてくる 
+
+find . -name "fileA"
+find . -type d | wc -l
+find . size 0 -ls   または find . -empty -ls
+find . size 0 -exec rm {} \;   または find . -empty -exec rm {} \;
+find . -empty -a -mtime +2 -and -mtime -7 
+
+●lnコマンドを使う　testファイルを作る
+⚪︎testファイルにtest_slinkというシンボリックリンクを貼る。そして消す  ln -s test test_slink
+⚪︎この時にtestファイルのリンクはいくつになる
+⚪︎testファイルにtest_hlinkというハードリンクを貼る
+⚪︎この時にtestファイルのリンクはいくつになる
+⚪︎ハードリンクのlsコマンドによるファイルタイプは何になる
+⚪︎シンボリックリンクにできてハードリンクにできないことは　　異なるファイルシステムでもリンクをつけれる
+
+●lnコマンドとcp,mvコマンドを使う。dirディレクトリ移動したら、そこで作業する。以降はcdコマンドは使わない。
+dir -- dir2-dir3-dir4-dir5
+       |-dir6
+       |-fileA
+       |-fileB
+⚪︎上のディレクトリを作る
+⚪︎fileA,fileBをdir6に移動する
+⚪︎dir6をdir5にコピーする
+⚪︎dir6のfileAに  Hello world  と書き込む
+⚪︎dirにfileAのシンボリックリンク(link-file)を貼る
+⚪︎fileAに  Hello shellscript  を追記する
+⚪︎link-fileをfileBに付け替える
+以下のようになっているか
+dir -- dir2-dir3-dir4-dir5-dir6--fileA
+       |-dir6--fileA                             |-fileB
+       |           |-fileB
+       |-link-file
+⚪︎dir6のリンク数はいくつ？それは何？
+⚪︎lnコマンドのメリットは2つ？
+
+mkdir -p dir/dir2/dir3/dir4/dir5 dir/dir6; touch dir/file{A,B}; cd dir
+mv fileA fileB dir6
+cp -R dir6 dir2/dir3/dir4/dir5/
+vim dir2/dir3/dir4/dir5/dir6/fileA
+ln -s dir2/dir3/dir4/dir5/dir6/fileA  link-file
+vim link-file
+rm link-file ; ln -s dir2/dir3/dir4/dir5/dir6/fileB
+
+
+●chmodコマンドを使う(ファイルとディレクトリを分けて考える)
+事前にchmod_dirをディレクトリを作って中にtest.txtを作る
+<ファイル>
+⚪︎デフォルトのパーミッションは何？
+⚪︎test.shにオーナーにだけ実行権限をつける。シンボルモードと数値モードで
+⚪︎test.shの読み書き禁止にする
+<ディレクトリ>
+⚪︎デフォルトのパーミッションは何？
+⚪︎test.shを削除禁止にする
+⚪︎chmod_dirをアクセス禁止にする
+
+●trコマンドを使う。以下のコマンドでファイルを作る　<- やり方、LINUXの教科書参照 cf 212
+echo "Hello-World" > tr.txt 
+⚪︎Hello:Worldにする     cat tr.txt | tr "-" ":"
+⚪︎全部小文字にする          cat tr.txt | tr "A-Z" "a-z" 
+⚪︎HelloとWorldの間で改行する    cat tr.txt | tr "-" "\n"
+⚪︎上と同じことをパイプを使わずにする   tr "-" "\n" < tr.txt
+
+●/dev/null
+⚪︎ls  / xxx でエラーだけを出力する           ls / xxx > /dev/null
+⚪︎ls  / xxx で標準出力、エラーのどちらも出力しない     ls / xxx > /dev/null  2&>1
+
+●seqコマンドを使う
+⚪︎0~9まで出力する
+⚪︎1~100までの奇数を出力する 
+seq 1 2 100
+⚪︎1~100までを３桁に揃えて出力する
+seq -w 100
+⚪︎'Hello  1'の1から10までを出力する
+seq -f 'Hello %g'  10
+⚪︎1~10を横に出力する
+seq  10 | xargs echo または  seq 10 | tr "\n" " "
+
+●vimの覚えるショートカット(できるだけ矢印キーとか使わない)
+⚪︎ノーマルモード                 Esc, ctrl + [
+⚪︎インサートモード             i
+⚪︎左に移動       h
+⚪︎下に移動       j
+⚪︎上に移動       k
+⚪︎右に移動      l
+⚪︎削除            x
+⚪︎行頭まで移動     0
+⚪︎行末まで移動     $
+⚪︎ヤンク               y
+⚪︎デリート           d
+⚪︎プット               p
+⚪︎検索          /hello                           helloを検索する
+⚪︎置き換え   %s/hello/bye/g        helloをbyeに置き換える
+
