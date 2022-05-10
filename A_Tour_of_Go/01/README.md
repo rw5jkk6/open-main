@@ -1,3 +1,18 @@
+- 基本文法
+```go
+package main
+ 
+import (
+   "fmt"
+)
+
+func main(){
+	var a int
+	fmt.Println(a)
+	a = 3
+}
+```
+
 - fizzbuzz(if)
 ```go
 package main
