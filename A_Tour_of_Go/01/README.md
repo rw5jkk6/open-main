@@ -1,3 +1,4 @@
+- fizzbuzz(if)
 ```go
 package main
  
@@ -19,7 +20,7 @@ func main(){
 	}
 }
 ```
-
+- fizzbuzz(switch)
 ```go
 package main
  
@@ -42,7 +43,7 @@ func main(){
 	}
 }
 ```
-
+- 掛け算
 ```
  1* 1= 1  1* 2= 2  1* 3= 3  1* 4= 4  1* 5= 5  1* 6= 6  1* 7= 7  1* 8= 8  1* 9= 9 
  2* 1= 2  2* 2= 4  2* 3= 6  2* 4= 8  2* 5=10  2* 6=12  2* 7=14  2* 8=16  2* 9=18 
@@ -67,9 +68,49 @@ func main(){
 	for i :=1; i<10; i++{
 		fmt.Println("")
 		for j := 1; j < 10; j++{
-			fmt.Printf("%2d*%2d=%2d ",i,j,i * j)
+			fmt.Printf("%d*%d=%2d ",i,j,i * j)
 		}
 	}
 	fmt.Println("")
+}
+```
+- おみくじ(vbaに似せて書いた)
+```go
+package main
+
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
+
+func main(){
+	var card = [3]string{}
+	card[0]="大吉"
+	card[1]="中吉"
+	card[2]="小吉"
+
+	rand.Seed(time.Now().UnixNano())
+	a := int(rand.Float64()*3) 
+	fmt.Printf("あなたの今日の運勢は%sです\n", card[a])
+}
+```
+
+- おみくじ(Goっぽい書き方)
+```go
+package main
+
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
+
+func main(){
+	card := [3]string{"大吉","中吉","小吉"}
+
+	rand.Seed(time.Now().UnixNano())
+	a := rand.Intn(3)
+	fmt.Printf("あなたの今日の運勢は%sです\n", card[a])
 }
 ```
