@@ -41,4 +41,4 @@ func main(){
 1. for文で４から１２を出力する
 2. for文で-10から10を2づつ偶数を出力する
 3. for文で10から0まで1づつ減らすのを出力する  
-<font color="Red"> for i:=10; 0 < i; i-- </font>
+<span style="color: red; "> for i:=10; 0 < i; i--{ </span>
