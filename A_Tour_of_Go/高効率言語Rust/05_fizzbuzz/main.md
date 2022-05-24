@@ -1,4 +1,5 @@
 - 1~100までの数字で３で割れるのをfizz、５で割れるのをbuzz、15で割れるのをfizzbuzz、それ以外は数字を表示する
+- if文で書く
 ```go
 package main
 
@@ -18,6 +19,30 @@ func main(){
          fmt.Println(i)
       }
    }
+}
+```
+- switch文で書く
+```go
+package main
+ 
+import (
+   "fmt"
+)
+
+func main(){
+	for i:=1; i <= 100; i++{
+		switch {
+		//case i % 15 == 0:
+	    case i % 3 == 0 && i % 5 == 0:
+			fmt.Println("fizzbuzz")
+		case i % 3 == 0:
+			fmt.Println("fizz")
+		case i % 5 == 0:
+			fmt.Println("buzz")
+		default:
+			fmt.Println(i)
+		}
+	}
 }
 ```
 - 1~50までの数を画面に表示し、3の倍数と３がつく整数の場合は数字ではなく『A』を表示する。なお、if文で else if と else を使わない。
