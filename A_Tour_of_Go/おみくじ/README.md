@@ -13,51 +13,7 @@ func main(){
 }
 ```
 
-- fizzbuzz(if)
-```go
-package main
- 
-import (
-   "fmt"
-)
 
-func main(){
-	for i := 1; i <= 100; i++{
-		if i % 15 == 0{
-			fmt.Println("fizzbuzz")
-		}else if i % 3 == 0{
-			fmt.Println("fizz")
-		}else if i % 5 == 0{
-			fmt.Println("buzz")
-		}else{
-			fmt.Println(i)
-		}
-	}
-}
-```
-- fizzbuzz(switch)
-```go
-package main
- 
-import (
-   "fmt"
-)
-
-func main(){
-	for i := 1; i <= 100; i++{
-		switch  {
-		case i % 15 == 0:
-			fmt.Println("fizzbuzz")
-		case i % 3 == 0:
-			fmt.Println("fizz")
-		case i % 5 == 0:
-			fmt.Println("buzz")
-		default:
-			fmt.Println(i)
-		}
-	}
-}
-```
 - 掛け算
 ```
  1* 1= 1  1* 2= 2  1* 3= 3  1* 4= 4  1* 5= 5  1* 6= 6  1* 7= 7  1* 8= 8  1* 9= 9 
