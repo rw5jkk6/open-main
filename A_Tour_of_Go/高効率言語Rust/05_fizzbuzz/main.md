@@ -32,8 +32,8 @@ import (
 func main(){
 	for i:=1; i <= 100; i++{
 		switch {
-	　　　　　　　　//case i % 15 == 0:
-	  　　　case i % 3 == 0 && i % 5 == 0:
+	    //case i % 15 == 0:
+	    case i % 3 == 0 && i % 5 == 0:
 			fmt.Println("fizzbuzz")
 	    case i % 3 == 0:
 			fmt.Println("fizz")
@@ -41,6 +41,33 @@ func main(){
 			fmt.Println("buzz")
 		default:
 			fmt.Println(i)
+		}
+	}
+}
+```
+- 無限forで書く
+```go
+package main
+ 
+import (
+   "fmt"
+)
+
+func main(){
+	i:=1
+	for{
+		if i % 15 == 0{
+			fmt.Println("fizzbuzz")
+		}else if i % 3 == 0{
+			fmt.Println("fizz")
+		}else if i % 5 == 0{
+			fmt.Println("buzz")
+		}else{
+			fmt.Println(i)
+		}
+		i++
+		if i == 101{
+			break
 		}
 	}
 }
