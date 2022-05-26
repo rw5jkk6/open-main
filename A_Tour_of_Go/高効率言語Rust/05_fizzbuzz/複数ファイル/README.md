@@ -7,4 +7,6 @@
 - テスト関数名は`Test_関数名`にする
 - `go mod init ファイル名`
 - `go mod tidy`
-- 実行は `go test -v`
+### テストの実行
+- 全体の実行は `go test -v`
+- 特定のテスト関数の実行 `go test -v -run Test_関数名`
