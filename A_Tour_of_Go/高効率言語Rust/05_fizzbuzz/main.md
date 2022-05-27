@@ -74,6 +74,48 @@ func main(){
 	}
 }
 ```
+- constとifとswitchで書く
+```go
+package main
+
+import (
+	"fmt"
+)
+
+const (
+	fizzbuzz int = iota
+	fizz
+	buzz
+	num
+)
+
+func main() {
+	for i := 1; i <= 100; i++ {
+		var fb int
+		if i%15 == 0 {
+			fb = fizzbuzz
+		} else if i%3 == 0 {
+			fb = fizz
+		} else if i%5 == 0 {
+			fb = buzz
+		} else {
+			fb = num
+		}
+		switch fb {
+		case fizzbuzz:
+			fmt.Println("fizzbuzz")
+		case fizz:
+			fmt.Println("fizz")
+		case buzz:
+			fmt.Println("buzz")
+		default:
+			fmt.Println(i)
+		}
+	}
+
+}
+
+```
 ## 1~50までの数を画面に表示し、3の倍数と３がつく整数の場合は数字ではなく『A』を表示する。なお、if文で else if と else を使わない。
 ```go
 package main
