@@ -6,6 +6,8 @@
 ### テストの実行
 - 全体の実行は `go test -v`
 - 特定のテスト関数の実行 `go test -v -run Test_関数名`
+- テストのカバレッジ
+  - `-cover`をつける 
 
 ## fizzbuzz_python
 - 実行は `python3 -m unittest discover -v`
