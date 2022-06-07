@@ -8,6 +8,7 @@
 - 特定のテスト関数の実行 `go test -v -run Test_関数名`
 - テストのカバレッジ
   - `-cover`をつける 
-
+## mainファイルの実行
+- `go run`は使うことができないので、`go build`で実行ファイルを作るとテストは実行されない
 ## fizzbuzz_python
 - 実行は `python3 -m unittest discover -v`
