@@ -12,7 +12,6 @@ class Block:
         pygame.draw.rect(SURFACE, self.col, self.rect)
 
 def tick():
-    global BLOCKS
     for event in pygame.event.get():
         if event.type == QUIT:
             pygame.quit()
