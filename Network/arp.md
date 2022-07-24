@@ -1,0 +1,10 @@
+- `docker container run -it --name "test1" alpine`
+- ctrl + p, ctrl + qで抜ける
+- `docker container run -it --name "test2" alpine`
+- `arp -a`
+- 一度抜けて、test2のiPAdressをチェックしておく
+- `docker inspect bridge`
+- test1からtest2にpingを飛ばす
+  - `ping -w 3 test2のipadress`
+- `arp -a`
+- test2とbrigdeのmacアドレスを知ることができる
